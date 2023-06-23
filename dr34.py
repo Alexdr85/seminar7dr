@@ -5,25 +5,20 @@
 **Ввод:** пара-ра-рам рам-пам-папам па-ра-па-да    
     **Вывод:** Парам пам-пам '''
 
-vvod = "пара-ра-рам рам-пам-папам па-ра-па-да"
-glas = "у е ё а о э я и ы ю"
-res = []
-sum = 0
-stih = vvod.strip().split()
-print(stih)
-for fraz in stih:
-    cont = 0
-    slov = elem.strip().split("-")
-    print(slov,end = "")
-    for j in glas:
-        for i in range(len(slow)):
-            for k in range(len(slov[i])):
-              if slov[i][k] == j:
-            count +=1
-    res.append(count)
-for i in rang(len(res)):
-    sum_+= res[i]
-if ((sum_/len(res)) == res[0]):
-    print("Парам пам-пам")
+def rhythm(str):
+    str = str.split()
+    list_1 = []
+    for word in str:
+        sum_w = 0
+        for i in word:
+            if i in 'аеёиоуыэюя':
+                sum_w += 1
+        list_1.append(sum_w)
+    return len(list_1) == list_1.count(list_1[0])
+
+
+str_1 = 'пара-ра-рам рам-пам-папам па-ра-па-дам'
+if rhythm(str_1):
+    print('Парам пам-пам')
 else:
-    print("Пам парам")
+    print('Пам парам')
